@@ -14,8 +14,12 @@
   let button = document.getElementById("share")
   button.addEventListener('click', () => {
     // get screen dimensions
-    let [x,y] = [800, 600]
-    window.open('share.html', 'whatever', `width=${x},height=${y}`)
+    let screenWidth = screen?.width || 1920
+    let screenHeight = screen?.height || 1080
+    
+    window.open('share.html', 'whatever', 
+      `width=${screenWidth/2},height=${screenHeight/2}`
+    )
   })
 
 </script>
