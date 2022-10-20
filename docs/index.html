@@ -15,9 +15,13 @@
   button.addEventListener('click', () => {
     let screenWidth = screen?.width || 1920
     let screenHeight = screen?.height || 1080
+    let screenSharePopupHeight = 46
+
+    let windowWidth = screenWidth/2
+    let windowHeight = screenHeight/2 + screenSharePopupHeight
     
     window.open('share.html', 'whatever', 
-      `width=${screenWidth/2},height=${screenHeight/2}`
+      `width=${windowWidth},height=${windowHeight}`
     )
   })
 
