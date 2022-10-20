@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>
+    Share this tab!
+  </title>
+
+  <style>
+    #local-video {
+      width: 100vw;
+    }
+  </style>
+
+</head>
+<body>
+  <video id="local-video" muted autoplay></video>
+</body>
+
+<script>
+  let videoElement = document.getElementById('local-video')
+  navigator.mediaDevices.getDisplayMedia({
+    video: {
+        cursor: "always"
+    },
+    audio: false
+  }).then((stream) => {
+    videoElement.srcObject = stream
+  })
+
+
+</script>
+</html>

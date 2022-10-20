@@ -1,0 +1,22 @@
+<html>
+<head>
+
+  <title>
+    Better screen share in Google Meet
+  </title>
+  
+</head>
+<body>
+  <button id="share">Share</button>
+</body>
+
+<script>
+  let button = document.getElementById("share")
+  button.addEventListener('click', () => {
+    // get screen dimensions
+    let [x,y] = [800, 600]
+    window.open('/share.html', 'whatever', `width=${x},height=${y}`)
+  })
+
+</script>
+</html>
