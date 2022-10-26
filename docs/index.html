@@ -5,9 +5,53 @@
     Better screen share in Google Meet
   </title>
   
+  <style>
+    html {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #333
+    }
+    .container {
+      position: relative;
+      text-align: center;
+      margin: auto;
+      max-width: 480px;
+      top: 10vh;
+    }
+    p, ol {
+      font-size: 1.2rem;
+      color: #666;
+      text-align: justify;
+    }
+    li {
+      margin-top: 0.5rem;
+    }
+    button {
+      background-color: #28f;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      border: #28f;
+    }
+    button:hover {
+      background-color: #27c;
+    }
+  </style>
 </head>
 <body>
-  <button id="share">Share</button>
+  <div class="container">
+    <h1>Screenshare</h1>
+    <p>This tiny app makes it easier to share your whole screen in Google Meet at a higher framerate. Follow these steps to get started.</p>
+    <ol>
+      <li>Click on the Share button below. A new window will pop up.</li>
+      <li>Select the monitor you'd like to share.</li>
+      <li>(Recommended) Move the new window to the same screen that you would like to share and then minimize it. This can prevent a low-resolution output.</li>
+      <li>In Google Meet, select Present > A tab, and select the new window.</li>
+      <li>Enjoy sharing with a higher framerate!</li>
+    </ol>
+    <button id="share">Share</button>
+  </div>
 </body>
 
 <script>
@@ -17,8 +61,8 @@
     let screenHeight = screen?.height || 1080
     let screenSharePopupHeight = 46
 
-    let windowWidth = screenWidth/2
-    let windowHeight = screenHeight/2 + screenSharePopupHeight
+    let windowWidth = Math.round(screenWidth/2)
+    let windowHeight = Math.round(screenHeight/2) + screenSharePopupHeight
     
     window.open('share.html', 'whatever', 
       `width=${windowWidth},height=${windowHeight}`
